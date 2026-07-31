@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Online Quiz Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/home.css}">
+</head>
+
+<body>
+
+<header>
+    <h1>Online Quiz Application</h1>
+</header>
+
+<div class="home-container">
+
+    <div class="home-card">
+
+        <h1>Welcome to Online Quiz</h1>
+
+        <p>
+            Test your knowledge by answering multiple choice questions.
+        </p>
+
+        <div class="home-buttons">
+
+            <a th:href="@{/quiz}" class="btn primary-btn">
+                Start Quiz
+            </a>
+
+            <a th:href="@{/add-question}" class="btn secondary-btn">
+                Add Question
+            </a>
+            
+            <a th:href="@{/questions}" class="btn secondary-btn">
+    Manage Questions
+</a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

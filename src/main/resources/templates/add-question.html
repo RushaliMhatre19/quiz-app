@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Question - Quiz App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+        }
+
+        .navbar {
+            background-color: #1f2937;
+            color: white;
+            padding: 18px 8%;
+        }
+
+        .container {
+            width: 600px;
+            margin: 40px auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2563eb;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        .back-btn {
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+    padding: 13px;
+    text-align: center;
+    border: 2px solid #64748b;
+    color: #475569;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.back-btn:hover {
+    background-color: #f1f5f9;
+}
+
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 18px 6%;
+    }
+
+    .navbar h2 {
+        font-size: 20px;
+    }
+
+    .container {
+        width: 90%;
+        margin: 30px auto;
+    }
+
+    .container h1 {
+        font-size: 26px;
+        margin-bottom: 25px;
+    }
+
+    form {
+        width: 100%;
+        padding: 20px;
+    }
+
+    input,
+    textarea,
+    select {
+        width: 100%;
+        max-width: 100%;
+        font-size: 16px;
+    }
+
+    textarea {
+        min-height: 90px;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .back-btn {
+        width: 100%;
+    }
+}
+
+  </style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <h2>Online Quiz Application</h2>
+</div>
+
+<div class="container">
+
+    <h1>Add Question</h1>
+
+    <form th:action="@{/save-question}"
+          th:object="${question}"
+          method="post">
+
+        <label for="questionText">Question</label>
+<textarea id="questionText" th:field="*{questionText}" required></textarea>
+
+<label for="optionA">Option A</label>
+<input id="optionA" type="text" th:field="*{optionA}" required>
+
+<label for="optionB">Option B</label>
+<input id="optionB" type="text" th:field="*{optionB}" required>
+
+<label for="optionC">Option C</label>
+<input id="optionC" type="text" th:field="*{optionC}" required>
+
+<label for="optionD">Option D</label>
+<input id="optionD" type="text" th:field="*{optionD}" required>
+
+<label for="correctAnswer">Correct Answer</label>
+<select id="correctAnswer" th:field="*{correctAnswer}" required>
+    <option value="">Select Correct Answer</option>
+    <option value="A">Option A</option>
+    <option value="B">Option B</option>
+    <option value="C">Option C</option>
+    <option value="D">Option D</option>
+</select>
+
+        <button type="submit">Save Question</button>
+        
+        <a th:href="@{/}" class="back-btn">
+    Back to Home
+</a>
+
+    </form>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Question</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/edit-question.css}">
+</head>
+
+<body>
+
+<header>
+    <h1>Online Quiz Application</h1>
+</header>
+
+<div class="form-container">
+
+    <h1>Edit Question</h1>
+
+    <form th:action="@{/update-question}"
+          th:object="${question}"
+          method="post">
+
+        <!-- Question ID -->
+        <input type="hidden" th:field="*{id}">
+
+        <label>Question</label>
+        <textarea th:field="*{questionText}" required></textarea>
+
+        <label>Option A</label>
+        <input type="text" th:field="*{optionA}" required>
+
+        <label>Option B</label>
+        <input type="text" th:field="*{optionB}" required>
+
+        <label>Option C</label>
+        <input type="text" th:field="*{optionC}" required>
+
+        <label>Option D</label>
+        <input type="text" th:field="*{optionD}" required>
+
+        <label>Correct Answer</label>
+
+        <select th:field="*{correctAnswer}" required>
+            <option value="A">Option A</option>
+            <option value="B">Option B</option>
+            <option value="C">Option C</option>
+            <option value="D">Option D</option>
+        </select>
+
+        <button type="submit">Update Question</button>
+        
+        <a th:href="@{/questions}" class="cancel-btn">
+    Cancel
+</a>
+
+    </form>
+
+</div>
+
+</body>
+</html>

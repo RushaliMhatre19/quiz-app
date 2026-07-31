@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz - Online Quiz Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/quiz.css}">
+</head>
+
+<body>
+
+<header>
+    <h1>Online Quiz Application</h1>
+</header>
+
+<div class="quiz-container">
+
+    <h1>Online Quiz</h1>
+
+    <form th:action="@{/submit-quiz}" method="post">
+
+        <div class="question-card"
+             th:each="question : ${questions}">
+
+            <h3 th:text="${question.questionText}"></h3>
+
+            <label class="option">
+                <input type="radio"
+                       th:name="'question_' + ${question.id}"
+                       value="A"
+                       required>
+                <span th:text="${question.optionA}"></span>
+            </label>
+
+            <label class="option">
+                <input type="radio"
+                       th:name="'question_' + ${question.id}"
+                       value="B">
+                <span th:text="${question.optionB}"></span>
+            </label>
+
+            <label class="option">
+                <input type="radio"
+                       th:name="'question_' + ${question.id}"
+                       value="C">
+                <span th:text="${question.optionC}"></span>
+            </label>
+
+            <label class="option">
+                <input type="radio"
+                       th:name="'question_' + ${question.id}"
+                       value="D">
+                <span th:text="${question.optionD}"></span>
+            </label>
+
+        </div>
+
+        <button type="submit" class="submit-btn">
+            Submit Quiz
+        </button>
+        
+        <a th:href="@{/}" class="back-home-btn">
+    Back to Home
+</a>
+
+    </form>
+
+</div>
+
+</body>
+</html>

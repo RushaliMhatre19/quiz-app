@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Result</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/result.css}">
+</head>
+
+<body>
+
+<header>
+    <h1>Online Quiz Application</h1>
+</header>
+
+<div class="result-container">
+
+    <div class="result-card">
+
+        <h1>Quiz Result</h1>
+
+        <h2>
+            Your Score:
+            <span th:text="${score}"></span>
+            /
+            <span th:text="${total}"></span>
+        </h2>
+
+        <a th:href="@{/quiz}" class="try-again-btn">
+            Try Again
+        </a>
+        
+        <a th:href="@{/}" class="home-btn">
+    Back to Home
+</a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

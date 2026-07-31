@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f5f9;
+    color: #0f172a;
+    min-height: 100vh;
+}
+
+/* Header */
+
+header {
+    background-color: #1e293b;
+    color: white;
+    padding: 22px 8%;
+}
+
+header h1 {
+    font-size: 26px;
+}
+
+/* Result */
+
+.result-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 80px auto;
+    text-align: center;
+}
+
+.result-card {
+    background-color: white;
+    padding: 45px 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.result-card h1 {
+    margin-bottom: 25px;
+    color: #1e293b;
+}
+
+.result-card h2 {
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #2563eb;
+}
+
+.try-again-btn {
+    display: inline-block;
+    padding: 13px 28px;
+    background-color: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.try-again-btn:hover {
+    background-color: #1d4ed8;
+}
+
+.home-btn {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 13px 28px;
+    border: 2px solid #2563eb;
+    color: #2563eb;
+    background-color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.home-btn:hover {
+    background-color: #eff6ff;
+}
